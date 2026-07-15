@@ -157,7 +157,7 @@ export class BrevoTransport implements Transport<SentMessageInfo> {
     });
   }
 
-  private toBase64Content(content: MailMessage['data']['attachments'][number]['content']): string {
+  private toBase64Content(content: NonNullable<MailMessage['data']['attachments']>[number]['content']): string {
     if (typeof content === 'string') {
       return Buffer.from(content).toString('base64');
     }
