@@ -148,16 +148,32 @@ export class BrevoTransport implements Transport<SentMessageInfo> {
         throw new Error('Brevo transport only supports attachments with inline content');
       }
 
-      const content = Buffer.isBuffer(attachment.content)
-        ? attachment.content
-        : typeof attachment.content === 'string'
-          ? Buffer.from(attachment.content)
-          : Buffer.from(attachment.content as ArrayBufferLike);
+      const content = this.toBase64Content(attachment.content);
 
       return {
-        name: attachment.filename ?? 'attachment',
-        content: content.toString('base64'),
+        name: typeof attachment.filename === 'string' && attachment.filename ? attachment.filename : 'attachment',
+        content,
       };
     });
+  }
+
+  private toBase64Content(content: MailMessage['data']['attachments'][number]['content']): string {
+    if (typeof content === 'string') {
+      return Buffer.from(content).toString('base64');
+    }
+
+    if (Buffer.isBuffer(content)) {
+      return content.toString('base64');
+    }
+
+    if (content instanceof Uint8Array) {
+      return Buffer.from(content).toString('base64');
+    }
+
+    if (content instanceof ArrayBuffer) {
+      return Buffer.from(content).toString('base64');
+    }
+
+    throw new Error('Brevo transport only supports string, Buffer, or binary attachment content');
   }
 }
