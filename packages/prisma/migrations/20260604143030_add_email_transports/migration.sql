@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "EmailTransportType" AS ENUM ('SMTP_AUTH', 'SMTP_API', 'RESEND', 'MAILCHANNELS');
+CREATE TYPE "EmailTransportType" AS ENUM ('SMTP_AUTH', 'SMTP_API', 'RESEND', 'BREVO', 'MAILCHANNELS');
 
 -- AlterTable
 ALTER TABLE "OrganisationClaim" ADD COLUMN     "emailTransportId" TEXT;

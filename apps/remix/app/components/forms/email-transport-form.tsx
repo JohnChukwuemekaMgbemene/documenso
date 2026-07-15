@@ -19,7 +19,7 @@ const ZEmailTransportFormSchema = z.object({
   name: ZNameSchema,
   fromName: ZNameSchema,
   fromAddress: z.string().email(),
-  type: z.enum(['SMTP_AUTH', 'SMTP_API', 'RESEND', 'MAILCHANNELS']),
+  type: z.enum(['SMTP_AUTH', 'SMTP_API', 'RESEND', 'BREVO', 'MAILCHANNELS']),
   host: z.string().optional(),
   port: z.coerce.number().int().positive().optional(),
   secure: z.boolean().optional(),
@@ -137,6 +137,7 @@ export const EmailTransportForm = ({
                     <SelectItem value="SMTP_AUTH">SMTP (auth)</SelectItem>
                     <SelectItem value="SMTP_API">SMTP (api)</SelectItem>
                     <SelectItem value="RESEND">Resend</SelectItem>
+                    <SelectItem value="BREVO">Brevo</SelectItem>
                     <SelectItem value="MAILCHANNELS">MailChannels</SelectItem>
                   </SelectContent>
                 </Select>
@@ -238,7 +239,7 @@ export const EmailTransportForm = ({
             />
           )}
 
-          {(type === 'RESEND' || type === 'MAILCHANNELS') && (
+          {(type === 'RESEND' || type === 'BREVO' || type === 'MAILCHANNELS') && (
             <FormField
               control={form.control}
               name="apiKey"
@@ -308,6 +309,8 @@ export const emailTransportFormToConfig = (values: EmailTransportFormValues) => 
       };
     case 'RESEND':
       return { type: 'RESEND' as const, apiKey: values.apiKey || '' };
+    case 'BREVO':
+      return { type: 'BREVO' as const, apiKey: values.apiKey || '', endpoint: values.endpoint || undefined };
     case 'MAILCHANNELS':
       return {
         type: 'MAILCHANNELS' as const,
