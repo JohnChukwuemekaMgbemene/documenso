@@ -1219,6 +1219,7 @@ enum EmailTransportType {
   SMTP_AUTH
   SMTP_API
   RESEND
+  BREVO
   MAILCHANNELS
 }
 

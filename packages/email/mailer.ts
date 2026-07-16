@@ -1,4 +1,5 @@
 import { env } from '@documenso/lib/utils/env';
+import { BrevoTransport } from './transports/brevo';
 import { ResendTransport } from '@documenso/nodemailer-resend';
 import type { Transporter } from 'nodemailer';
 import { createTransport } from 'nodemailer';
@@ -18,6 +19,9 @@ import { MailChannelsTransport } from './transports/mailchannels';
  * - **mailchannels**: Uses MailChannelsTransport, requiring:
  *   - `NEXT_PRIVATE_MAILCHANNELS_API_KEY`: API key for MailChannels
  *   - `NEXT_PRIVATE_MAILCHANNELS_ENDPOINT`: Endpoint for MailChannels (optional)
+ * - **brevo**: Uses BrevoTransport, requiring:
+ *   - `NEXT_PRIVATE_BREVO_API_KEY`: API key for Brevo
+ *   - `NEXT_PRIVATE_BREVO_ENDPOINT`: Endpoint for Brevo (optional)
  * - **resend**: Uses ResendTransport, requiring:
  *   - `NEXT_PRIVATE_RESEND_API_KEY`: API key for Resend
  * - **smtp-api**: Uses a custom SMTP API configuration, requiring:
@@ -58,6 +62,19 @@ const getTransport = (): Transporter => {
       MailChannelsTransport.makeTransport({
         apiKey: env('NEXT_PRIVATE_MAILCHANNELS_API_KEY'),
         endpoint: env('NEXT_PRIVATE_MAILCHANNELS_ENDPOINT'),
+      }),
+    );
+  }
+
+  if (transport === 'brevo') {
+    if (!env('NEXT_PRIVATE_BREVO_API_KEY')) {
+      throw new Error('Brevo transport requires NEXT_PRIVATE_BREVO_API_KEY');
+    }
+
+    return createTransport(
+      BrevoTransport.makeTransport({
+        apiKey: env('NEXT_PRIVATE_BREVO_API_KEY'),
+        endpoint: env('NEXT_PRIVATE_BREVO_ENDPOINT'),
       }),
     );
   }

@@ -3,6 +3,7 @@ import { ResendTransport } from '@documenso/nodemailer-resend';
 import type { Transporter } from 'nodemailer';
 import { createTransport } from 'nodemailer';
 
+import { BrevoTransport } from './brevo';
 import { MailChannelsTransport } from './mailchannels';
 
 export const buildTransport = (config: TEmailTransportConfig): Transporter => {
@@ -19,6 +20,14 @@ export const buildTransport = (config: TEmailTransportConfig): Transporter => {
       return createTransport(
         ResendTransport.makeTransport({
           apiKey: config.apiKey,
+        }),
+      );
+
+    case 'BREVO':
+      return createTransport(
+        BrevoTransport.makeTransport({
+          apiKey: config.apiKey,
+          endpoint: config.endpoint,
         }),
       );
 

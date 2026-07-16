@@ -1,4 +1,5 @@
 import {
+  ZBrevoConfigSchema,
   ZMailChannelsConfigSchema,
   ZResendConfigSchema,
   ZSmtpApiConfigSchema,
@@ -16,6 +17,7 @@ const ZUpdateConfigSchema = z.discriminatedUnion('type', [
   ZSmtpAuthConfigSchema,
   ZSmtpApiConfigSchema.extend({ apiKey: z.string().optional() }),
   ZResendConfigSchema.extend({ apiKey: z.string().optional() }),
+  ZBrevoConfigSchema.extend({ apiKey: z.string().optional() }),
   ZMailChannelsConfigSchema.extend({ apiKey: z.string().optional() }),
 ]);
 

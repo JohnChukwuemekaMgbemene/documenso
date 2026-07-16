@@ -38,6 +38,12 @@ export const ZResendConfigSchema = z.object({
   apiKey: z.string().min(1), // Secret — keep in sync with EMAIL_TRANSPORT_SECRET_KEYS.
 });
 
+export const ZBrevoConfigSchema = z.object({
+  type: z.literal('BREVO'),
+  apiKey: z.string().min(1), // Secret — keep in sync with EMAIL_TRANSPORT_SECRET_KEYS.
+  endpoint: z.string().optional(),
+});
+
 export const ZMailChannelsConfigSchema = z.object({
   type: z.literal('MAILCHANNELS'),
   apiKey: z.string().min(1), // Secret — keep in sync with EMAIL_TRANSPORT_SECRET_KEYS.
@@ -48,6 +54,7 @@ export const ZEmailTransportConfigSchema = z.discriminatedUnion('type', [
   ZSmtpAuthConfigSchema,
   ZSmtpApiConfigSchema,
   ZResendConfigSchema,
+  ZBrevoConfigSchema,
   ZMailChannelsConfigSchema,
 ]);
 
@@ -63,6 +70,7 @@ export const ZEmailTransportPublicConfigSchema = z.discriminatedUnion('type', [
   ZSmtpAuthConfigSchema.omit({ password: true }),
   ZSmtpApiConfigSchema.omit({ apiKey: true }),
   ZResendConfigSchema.omit({ apiKey: true }),
+  ZBrevoConfigSchema.omit({ apiKey: true }),
   ZMailChannelsConfigSchema.omit({ apiKey: true }),
 ]);
 
