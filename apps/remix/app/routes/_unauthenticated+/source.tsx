@@ -62,8 +62,8 @@ export default function Source({}: Route.ComponentProps) {
 
         <p className="mt-6 text-muted-foreground text-xs leading-5">
           <Trans>
-            The release tag above matches this app version. If production changes, update the tag so it stays in sync
-            with the running source.
+            The release tag above matches this app version. You can also check the <a href={SOURCE_REPOSITORY_URL} target="_blank" rel="noreferrer" className="text-primary hover:underline">
+            source code.
           </Trans>
         </p>
       </div>

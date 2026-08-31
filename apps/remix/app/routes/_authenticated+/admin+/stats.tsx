@@ -31,7 +31,7 @@ import { AdminStatsSignerConversionChart } from '~/components/general/admin-stat
 import { AdminStatsUsersWithDocumentsChart } from '~/components/general/admin-stats-users-with-documents';
 import { CardMetric } from '~/components/general/metric-card';
 
-import { version } from '../../../../package.json';
+import { version } from '../../../../../../package.json';
 import type { Route } from './+types/stats';
 
 export async function loader() {
