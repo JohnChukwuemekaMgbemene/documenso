@@ -322,7 +322,7 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
         className={cn(
           'my-6 flex flex-col justify-between p-6 sm:flex-row sm:items-center',
           organisation.subscription?.status === SubscriptionStatus.ACTIVE &&
-            'border border-green-600/20 bg-green-50 dark:border-green-500/20 dark:bg-green-500/10',
+            'border border-primary/20 bg-primary/10 dark:border-primary/20 dark:bg-primary/10',
           organisation.subscription?.status === SubscriptionStatus.INACTIVE && 'opacity-60',
         )}
         variant="neutral"
@@ -336,7 +336,7 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
             {organisation.subscription ? (
               <span className="flex items-center gap-2">
                 {organisation.subscription.status === SubscriptionStatus.ACTIVE && (
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-600 dark:bg-green-400" aria-hidden="true" />
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                 )}
                 <span>{i18n._(SUBSCRIPTION_STATUS_MAP[organisation.subscription.status])} subscription found</span>
               </span>

@@ -6,18 +6,18 @@
   :root,
   .dark-mode-disabled {
     --background: 0 0% 100%;
-    --foreground: 214.4 68.1% 13.5%; /* brand navy #0b1f3a */
+    --foreground: 214.5 68.1% 13.5%; /* brand navy #0b1f3a */
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 214.4 68.1% 13.5%; /* brand navy */
+    --popover-foreground: 214.5 68.1% 13.5%; /* brand navy */
 
     --card: 0 0% 100%;
     --card-border: 214.3 31.8% 91.4%;
     --card-border-tint: 232 96 10; /* brand orange rgb #e8600a */
-    --card-foreground: 214.4 68.1% 13.5%; /* brand navy */
+    --card-foreground: 214.5 68.1% 13.5%; /* brand navy */
 
     --field-card: 95 74% 90%;
     --field-card-border: 95.08 71.08% 67.45%;
@@ -33,10 +33,10 @@
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 214.4 68.1% 13.5%; /* brand navy */
+    --secondary-foreground: 214.5 68.1% 13.5%; /* brand navy */
 
     --accent: 210 40% 96.1%;
-    --accent-foreground: 214.4 68.1% 13.5%; /* brand navy */
+    --accent-foreground: 214.5 68.1% 13.5%; /* brand navy */
 
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
@@ -105,7 +105,7 @@
     --new-info-600: 214, 68%, 30%;
     --new-info-700: 214, 68%, 22%;
     --new-info-800: 214, 68%, 17%;
-    --new-info-900: 214.4, 68.1%, 13.5%;
+    --new-info-900: 214.5, 68.1%, 13.5%;
     --new-info-950: 214, 68%, 8%;
 
     /* Secondary - Error */
@@ -164,19 +164,19 @@
 
     --field-border: 214.3 31.8% 91.4%;
 
-    --primary: 23.3 91.7% 47.5%; /* brand orange */
+    --primary: 23.2 91.7% 47.5%; /* brand orange */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 23.4%;
-    --secondary-foreground: 23.3 91.7% 60%; /* lightened brand orange for contrast on dark bg */
+    --secondary-foreground: 23.2 91.7% 60%; /* lightened brand orange for contrast on dark bg */
 
     --accent: 0 0% 27.9%;
-    --accent-foreground: 23.3 91.7% 60%; /* lightened brand orange for contrast on dark bg */
+    --accent-foreground: 23.2 91.7% 60%; /* lightened brand orange for contrast on dark bg */
 
     --destructive: 0 87% 62%;
     --destructive-foreground: 0 0% 98%;
 
-    --ring: 23.3 91.7% 47.5%; /* brand orange */
+    --ring: 23.2 91.7% 47.5%; /* brand orange */
 
     --radius: 0.5rem;
 

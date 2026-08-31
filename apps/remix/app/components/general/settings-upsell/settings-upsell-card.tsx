@@ -82,8 +82,8 @@ export const SettingsUpsellCard = ({
         <ul className="mt-6 space-y-3">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-2.5 text-sm">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-documenso-200">
-                <CheckIcon className="h-3 w-3 text-documenso-800" strokeWidth={2.5} />
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15">
+                <CheckIcon className="h-3 w-3 text-primary" strokeWidth={2.5} />
               </span>
               {feature}
             </li>

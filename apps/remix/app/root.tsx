@@ -26,6 +26,7 @@ import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes'
 import type { Route } from './+types/root';
 import stylesheet from './app.css?url';
 import { GenericErrorLayout } from './components/general/generic-error-layout';
+import { SiteFooter } from './components/general/site-footer';
 import { langCookie } from './storage/lang-cookie.server';
 import { themeSessionResolver } from './storage/theme-session.server';
 import { appMetaTags } from './utils/meta';
@@ -172,6 +173,8 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
             <TooltipProvider>
               <TrpcProvider>
                 {children}
+
+                <SiteFooter />
 
                 <Toaster />
               </TrpcProvider>

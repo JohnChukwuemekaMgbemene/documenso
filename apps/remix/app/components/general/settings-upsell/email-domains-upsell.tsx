@@ -82,11 +82,11 @@ export const EmailDomainsUpsell = () => {
                 transition={SPRING}
                 className={cn(
                   'absolute inset-0 flex items-center gap-2 rounded-full border bg-background px-3 font-mono text-xs',
-                  isBranded ? 'border-documenso-300 text-documenso-800' : 'text-muted-foreground',
+                  isBranded ? 'border-primary/30 text-primary' : 'text-muted-foreground',
                 )}
               >
                 {isBranded ? (
-                  <BadgeCheckIcon className="h-3.5 w-3.5 shrink-0 text-documenso-700" />
+                  <BadgeCheckIcon className="h-3.5 w-3.5 shrink-0 text-primary" />
                 ) : (
                   <MailIcon className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
                 )}
@@ -157,7 +157,7 @@ export const EmailDomainsUpsell = () => {
                           transition={{ ...POP, delay: 0.12 }}
                           className="shrink-0"
                         >
-                          <BadgeCheckIcon className="h-3.5 w-3.5 text-documenso-700" />
+                          <BadgeCheckIcon className="h-3.5 w-3.5 text-primary" />
                         </motion.span>
                       )}
                     </motion.div>
