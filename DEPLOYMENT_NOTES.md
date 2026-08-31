@@ -62,7 +62,7 @@ For Railway, deploy the repo, attach a PostgreSQL service or point the app at Su
 The repository already includes `render.yaml`, which defines the web service build and start commands:
 
 ```yaml
-buildCommand: npm i && npm run build
+buildCommand: npm ci --include=dev && npm run build
 startCommand: npx prisma migrate deploy --schema packages/prisma/schema.prisma && npx turbo run start --filter=@documenso/remix
 ```
 
