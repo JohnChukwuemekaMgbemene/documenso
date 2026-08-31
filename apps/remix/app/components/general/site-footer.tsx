@@ -1,8 +1,8 @@
 import { Link } from 'react-router';
 import { version } from '../../../../../package.json';
 
-const SOURCE_REPOSITORY_URL = 'https://github.com/JohnChukwuemekaMgbemene/documenso';
-const RELEASE_TAG_URL = `https://github.com/JohnChukwuemekaMgbemene/documenso/releases/tag/v${version}`;
+const SOURCE_REPOSITORY_URL = 'https://github.com/firxttech/documenso';
+const RELEASE_TAG_URL = `https://github.com/firxttech/documenso/releases/tag/v${version}`;
 
 export const SiteFooter = () => {
   return (
