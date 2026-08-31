@@ -3,6 +3,8 @@ import { Trans } from '@lingui/react/macro';
 import { Link } from 'react-router';
 
 import { appMetaTags } from '~/utils/meta';
+
+import type { Route } from './+types/source';
 import { version } from '../../../../../package.json';
 
 const SOURCE_REPOSITORY_URL = 'https://github.com/JohnChukwuemekaMgbemene/documenso';
